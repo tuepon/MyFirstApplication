@@ -8,13 +8,13 @@
 <h1 th:text="${title}">title</h1>
 <form method="post" action="#" th:action="@{/inquiry/confirm}" th:object="${inquiryForm}">
 	<label for="name">Name:</label>
-	<input id="name" name="name" type="text"><br>
+	<input id="name" name="name" type="text" th:value="*{name}"><br>
 	<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
 	<label for="email">Email:</label>
-	<input id="email" name="email" type="text"><br>
+	<input id="email" name="email" type="text" th:value="*{email}"><br>
 	<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
 	<label for="contents">Detail:</label>
-	<textarea name="contents" id="contents" rows="3" cols="40"></textarea><br>
+	<textarea name="contents" id="contents" rows="3" cols="40" th:field="*{contents}"></textarea><br>
 	<div th:if="${#fields.hasErrors('contents')}" th:errors="*{contents}"></div>
 	<input type="submit" value="Confirm">
 </form>
