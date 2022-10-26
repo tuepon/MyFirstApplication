@@ -11,7 +11,7 @@
 <p th:text="*{name}"></p>
 <p th:text="*{email}"></p>
 <p th:text="*{contents}"></p>
-<form method="post" action="#" th:action="@{/inquiry/form}">
+<form method="post" action="#" th:action="@{/inquiry/form}" th:object="${inquiryForm}">
 	<input type="hidden" name="name" th:value="*{name}">
 	<input type="hidden" name="email" th:value="*{email}">
 	<input type="hidden" name="contents" th:value="*{contents}">

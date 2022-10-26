@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1 th:text="${title}">title</h1>
+<h2 th:text="${complete}"></h2>
 <form method="post" action="#" th:action="@{/inquiry/confirm}" th:object="${inquiryForm}">
 	<label for="name">Name:</label>
 	<input id="name" name="name" type="text" th:value="*{name}"><br>

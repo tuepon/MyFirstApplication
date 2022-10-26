@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${title}">Insert title here</title>
+</head>
+<body>
+<h1 th:text="${title}">title</h1>
+<h2 th:text="${complete}"></h2>
+<div th:object="${surveyForm}">
+<p th:text="*{age}"></p>
+<p th:text="*{satisfaction}"></p>
+<p th:text="*{comment}"></p>
+<form method="post" action="#" th:action="@{/survey/form}" th:object="${surveyForm}">
+	<input type="hidden" name="age" th:value="*{age}">
+	<input type="hidden" name="satisfaction" th:value="*{satisfaction}">
+	<input type="hidden" name="comment" th:value="*{comment}">
+	<input type="submit" value="Go Back">
+</form>
+<form method="post" action="#" th:action="@{/survey/complete}">
+	<input type="hidden" name="age" th:value="*{age}">
+	<input type="hidden" name="satisfaction" th:value="*{satisfaction}">
+	<input type="hidden" name="comment" th:value="*{comment}">
+	<input type="submit" value="Complete">
+</form>
+</div>
+</body>
+</html>
