@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${title}">Insert title here</title>
+</head>
+<body>
+<h1 th:text="${title}">title</h1>
+<table>
+	<tr>
+		<th>id</th><th>age</th><th>satisfaction</th><th>comment</th><th>datetime</th>
+	</tr>
+	<tr th:each="survey : ${surveyList}">
+		<td th:text="${survey.id}">1</td>
+		<td th:text="${survey.age}"></td>
+		<td th:text="${survey.satisfaction}"></td>
+		<td th:text="${survey.comment}"></td>
+		<td th:text="${survey.created}"></td>
+	</tr>
+</table>
+</body>
+</html>
