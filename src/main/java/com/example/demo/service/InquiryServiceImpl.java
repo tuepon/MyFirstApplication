@@ -14,18 +14,23 @@ public class InquiryServiceImpl implements InquiryService {
 	private final InquiryDao dao;
 	
 	@Autowired InquiryServiceImpl(InquiryDao dao) {
+		
 		this.dao = dao;
+		
 	}
 
 	@Override
 	public void save(Inquiry inquiry) {
+		
 		dao.insertInquiry(inquiry);
 
 	}
 
 	@Override
 	public List<Inquiry> getAll() {
+		
 		return dao.getAll();
+		
 	}
 
 }
