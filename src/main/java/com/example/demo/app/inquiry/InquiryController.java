@@ -34,13 +34,13 @@ public class InquiryController {
 	public String index(Model model) {
 		List<Inquiry> list = inquiryService.getAll();
 		
-		Inquiry inquiry = new Inquiry();
-		inquiry.setId(4);
-		inquiry.setName("Lan");
-		inquiry.setEmail("sample4@example.com");
-		inquiry.setContents("Hello");
-		
-		inquiryService.update(inquiry);
+//		Inquiry inquiry = new Inquiry();
+//		inquiry.setId(4);
+//		inquiry.setName("Lan");
+//		inquiry.setEmail("sample4@example.com");
+//		inquiry.setContents("Hello");
+//		
+//		inquiryService.update(inquiry);
 		
 //		try {
 //			inquiryService.update(inquiry);
@@ -52,7 +52,7 @@ public class InquiryController {
 		model.addAttribute("inquiryList", list);
 		model.addAttribute("title", "Inquiry Index");
 		
-		return "inquiry/index";
+		return "inquiry/index_boot";
 	}
 	 
 	@GetMapping("/form")
